@@ -50,7 +50,7 @@ public class RootLayoutController {
                 "XML files (*.xml)", "*.xml");
         fileChooser.getExtensionFilters().add(extFilter);
 
-        // Show open file dialog
+        // Show save file dialog
         File file = fileChooser.showOpenDialog(mainApp.getPrimaryStage());
 
         if (file != null) {
@@ -101,12 +101,12 @@ public class RootLayoutController {
      */
     @FXML
     private void handleAbout() {
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("AddressApp");
-        alert.setHeaderText("About");
-        alert.setContentText("Author: Marco Jakob\nWebsite: http://code.makery.ch");
+    	Alert alert = new Alert(AlertType.INFORMATION);
+    	alert.setTitle("AddressApp");
+    	alert.setHeaderText("About");
+    	alert.setContentText("Author: Marco Jakob\nWebsite: http://code.makery.ch");
 
-        alert.showAndWait();
+    	alert.showAndWait();
     }
 
     /**
@@ -115,5 +115,13 @@ public class RootLayoutController {
     @FXML
     private void handleExit() {
         System.exit(0);
+    }
+
+    /**
+     * Opens the birthday statistics.
+     */
+    @FXML
+    private void handleShowBirthdayStatistics() {
+      mainApp.showBirthdayStatistics();
     }
 }
